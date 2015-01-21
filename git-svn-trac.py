@@ -77,6 +77,9 @@ def replace_reference(revmap, text):
 
         return ' changeset:%s' % revmap.get(rev, rev)
 
+    if not isinstance(text, basestring):
+        return text
+
     return re.sub(_pattern, handler, text)
 
 def migrate_table(connection, revmap, table, keys, targets):
