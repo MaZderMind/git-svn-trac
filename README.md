@@ -34,34 +34,41 @@ Installation
 
 1. Create a Virtual Environment
 
-    mkdir git-svn-trac
-    cd git-svn-trac
-    virtualenv --no-site-packages -p python2.7 .
-    source bin/activate
+ ````
+ mkdir git-svn-trac
+ cd git-svn-trac
+ virtualenv --no-site-packages -p python2.7 .
+ source bin/activate
+ ````
 
 2. Run pip, using the requirements fitting for your database
 
-    pip install -r mysql-requirements.txt
-    or
-    pip install -r sqlite-requirements.txt
-    or
-    pip install -r postgres-requirements.txt
+ ````
+ pip install -r mysql-requirements.txt
+ or
+ pip install -r sqlite-requirements.txt
+ or
+ pip install -r postgres-requirements.txt
+ ````
 
 3. Create a backup of your git folder and database!
 
 Usage
 -----
 
-    python git-svn-trac.py gitfolder dsn
+````
+python git-svn-trac.py gitfolder dsn
+````
 
 Examples
 --------
-    
-    python git-svn-trac.py ~/helloworld/ mysql+pymysql://user:password@localhost/trac
+````
+python git-svn-trac.py ~/helloworld/ mysql+pymysql://user:password@localhost/trac
 
-    python git-svn-trac.py ~/project/ sqlite:///home/user/trac.db
+python git-svn-trac.py ~/project/ sqlite:///home/user/trac.db
 
-    python git-svn-trac.py ~/project/ postgres+psycopg2://user:password@localhsot/trac
+python git-svn-trac.py ~/project/ postgres+psycopg2://user:password@localhsot/trac
+ ````
 
 Author
 ------
