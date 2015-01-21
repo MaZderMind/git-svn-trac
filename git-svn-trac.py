@@ -71,6 +71,10 @@ def replace_reference(revmap, text):
         # get the new revision from the map or just leave the result
         # (it might get triggered by things that don't point to a revision, 
         # like python code within a comment)
+        rev = match.groups()[0]
+        if rev not in revmap:
+            return ' !r%s' % rev
+
         return ' changeset:%s' % revmap.get(rev, rev)
 
     return re.sub(_pattern, handler, text)
